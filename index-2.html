@@ -1,0 +1,64 @@
+# Crie um novo repositório no GitHub
+echo "# Análises Estatísticas de Dados Educacionais" >> README.md
+
+# Inicie o repositório Git localmente
+git init
+
+# Adicione o arquivo README.md ao repositório
+git add README.md
+
+# Primeiro commit
+git commit -m "Primeiro commit - Configuração inicial da página de gráficos"
+
+# Adicione o repositório remoto (substitua 'usuario' e 'nome-repositorio' pelo seu usuário e repositório)
+git remote add origin https://github.com/usuario/nome-repositorio.git
+
+# Suba os arquivos para o repositório remoto
+git push -u origin master
+
+# Crie um arquivo index.html com estrutura básica para gráficos
+echo "<!DOCTYPE html>
+<html lang=\"pt-BR\">
+<head>
+    <meta charset=\"UTF-8\">
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+    <title>Gráficos de Análises Educacionais</title>
+    <script src=\"https://cdn.jsdelivr.net/npm/chart.js\"></script>
+</head>
+<body>
+    <h1>Análises Estatísticas de Dados Educacionais</h1>
+    <canvas id=\"myChart\" width=\"400\" height=\"200\"></canvas>
+    <script>
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',  // ou 'line', 'pie', etc.
+            data: {
+                labels: ['Escola A', 'Escola B', 'Escola C', 'Escola D', 'Escola E'],
+                datasets: [{
+                    label: 'Média de Desempenho',
+                    data: [75, 85, 90, 70, 80],  // Exemplos de dados
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>" >> index.html
+
+# Adicione o arquivo index.html ao repositório
+git add index.html
+
+# Commit para o arquivo HTML
+git commit -m "Adiciona estrutura inicial para gráficos de análises estatísticas"
+
+# Suba o arquivo HTML para o repositório remoto
+git push -u origin master
